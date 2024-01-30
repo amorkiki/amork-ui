@@ -1,0 +1,14 @@
+.amor-icon {
+  --amor-icon-color:inherit;
+  display: inline-block;
+  justify-self: center;
+  align-items: center;
+  position: relative;
+  font-size: inherit;
+  color:var(--amor-icon-color)
+}
+@each $var in primary,success,warning,error,info{
+  .amor-icon-#{$var}{
+    --amor-icon-color: var(--amor-color-#{$var});
+  }
+}

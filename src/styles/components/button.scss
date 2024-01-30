@@ -1,0 +1,136 @@
+.amor-button {
+  --amor-button-font-weight: var(--amor-font-weight-primary);
+  --amor-button-border-color: var(--amor-border-color);
+  --amor-button-bg-color: var(--amor-fill-color-blank);
+  --amor-button-text-color: var(--amor-text-color-regular);
+  --amor-button-disabled-text-color: var(--amor-disabled-text-color);
+  --amor-button-disabled-bg-color: var(--amor-fill-color-blank);
+  --amor-button-disabled-border-color: var(--amor-border-color-light);
+  --amor-button-hover-text-color: var(--amor-color-primary);
+  --amor-button-hover-bg-color: var(--amor-color-primary-light-9);
+  --amor-button-hover-border-color: var(--amor-color-primary-light-7);
+  --amor-button-active-text-color: var(--amor-button-hover-text-color);
+  --amor-button-active-border-color: var(--amor-color-primary);
+  --amor-button-active-bg-color: var(--amor-button-hover-bg-color);
+  --amor-button-outline-color: var(--amor-color-primary-light-5);
+  --amor-button-active-color: var(--amor-text-color-primary);
+}
+
+.amor-button {
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  height: 40px;
+  background-color: var(--amor-button-bg-color);
+  border: var(--amor-border);
+  border-color: var(--amor-button-border-color);
+  color: var(--amor-button-text-color);
+  appearance: none;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  transition: 0.1s;
+  font-weight: var(--amor-button-font-weight);
+  user-select: none;
+  vertical-align: middle;
+  padding: 12px 20px;
+  font-size: var(--amor-font-size-base);
+  border-radius: var(--amor-border-radius-base);
+
+  &:hover,
+  &:focus {
+    color: var(--amor-button-hover-text-color);
+    border-color: var(--amor-button-hover-border-color);
+    background-color: var(--amor-button-hover-bg-color);
+    outline: none;
+  }
+
+  &:active {
+    color: var(--amor-button-active-text-color);
+    border-color: var(--amor-button-active-border-color);
+    background-color: var(--amor-button-active-bg-color);
+    outline: none;
+  }
+
+  &.is-round {
+    border-radius: var(--amor-border-radius-round);
+  }
+
+  &.is-circle {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  // 禁用相关
+  &.is-disabled,
+  &.is-disabled:hover,
+  &.is-disabled:focus,
+  &[disabled],
+  &[disabled]:hover,
+  &[disabled]:focus {
+    color: var(--amor-button-disabled-text-color);
+    cursor: not-allowed;
+    background-image: none;
+    background-color: var(--amor-button-disabled-bg-color);
+    border-color: var(--amor-button-disabled-border-color);
+  }
+
+  [class*='amor-icon']+span {
+    margin-left: 6px;
+    position: relative;
+    bottom: 2px;
+  }
+}
+
+@each $val in primary, success, warning, info, danger {
+
+  // 通过类，改变 CSS 变量所对应的值
+  .amor-button--#{$val} {
+    --amor-button-text-color: var(--amor-color-white);
+    --amor-button-bg-color: var(--amor-color-#{$val});
+    --amor-button-border-color: var(--amor-color-#{$val});
+    --amor-button-outline-color: var(--amor-color-#{$val}-light-5);
+    --amor-button-active-color: var(--amor-color-#{$val}-dark-2);
+    --amor-button-hover-text-color: var(--amor-color-white);
+    --amor-button-hover-bg-color: var(--amor-color-#{$val}-light-3);
+    --amor-button-hover-border-color: var(--amor-color-#{$val}-light-3);
+    --amor-button-active-bg-color: var(--amor-color-#{$val}-dark-2);
+    --amor-button-active-border-color: var(--amor-color-#{$val}-dark-2);
+    --amor-button-disabled-text-color: var(--amor-color-white);
+    --amor-button-disabled-bg-color: var(--amor-color-#{$val}-light-5);
+    --amor-button-disabled-border-color: var(--amor-color-#{$val}-light-5);
+  }
+
+  .amor-button--#{$val}.is-plain {
+    --amor-button-text-color: var(--amor-color-#{$val});
+    --amor-button-bg-color: var(--amor-color-#{$val}-light-9);
+    --amor-button-border-color: var(--amor-color-#{$val}-light-5);
+    --amor-button-hover-text-color: var(--amor-color-white);
+    --amor-button-hover-bg-color: var(--amor-color-#{$val});
+    --amor-button-hover-border-color: var(--amor-color-#{$val});
+    --amor-button-active-text-color: var(--amor-color-white);
+  }
+}
+
+.amor-button--large {
+  --amor-button-size: 50px;
+  height: var(--amor-button-size);
+  padding: 12px 19px;
+  font-size: var(--amor-font-size-base);
+  border-radius: var(--amor-border-radius-base);
+}
+
+.amor-button--small {
+  --amor-button-size: 24px;
+  height: var(--amor-button-size);
+  padding: 5px 11px;
+  font-size: 12px;
+  border-radius: calc(var(--amor-border-radius-base) - 1px);
+}

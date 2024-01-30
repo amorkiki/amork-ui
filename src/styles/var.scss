@@ -1,0 +1,84 @@
+// 主题色
+$colors: (
+  primary:#409EFF,
+  success:#67C23A,
+  warning: #E6A23C,
+  danger: #F56C6C,
+  info: #909399,
+  dark:#303133,
+);
+
+:root {
+
+  @each $val, $color in $colors {
+    // 生成主题颜色
+    --amor-color-#{$val}: #{$color};
+
+    // 生成不同亮度的颜色
+    @for $i from 1 through 4 {
+      --amor-color-#{$val}-light-#{2 * $i + 1}: #{mix(#fff, $color, ((2 * $i + 1) * 10 * 1%))};
+    }
+
+    // dark2 和 light8 因为不符合上面的规律，单独生成
+    --amor-color-#{$val}-light-8: #{mix(#fff, $color, 80 * 1%)}; // 80% 亮度
+    --amor-color-#{$val}-dark-2: #{mix(#000,$color,20 * 1%)}; //dark是和黑色进行混合，20% 亮度
+}
+
+// 对应 ElementUI 
+--amor-color-base:#409EFF;
+--amor-color-white: #fff;
+--amor-color-black: #000;
+--amor-bg-color: #ffffff;
+--amor-bg-color-page: #f2f3f5;
+--amor-bg-color-overlay: #ffffff;
+--amor-text-color-primary: #303133;
+--amor-text-color-regular: #606266;
+--amor-text-color-secondary: #909399;
+--amor-text-color-placeholder: #a8abb2;
+--amor-text-color-disabled: #c0c4cc;
+--amor-border-color: #dcdfe6;
+--amor-border-color-light: #e4e7ed;
+--amor-border-color-lighter: #ebeef5;
+--amor-border-color-extra-light: #f2f6fc;
+--amor-border-color-dark: #d4d7de;
+--amor-border-color-darker: #cdd0d6;
+--amor-fill-color: #f0f2f5;
+--amor-fill-color-light: #f5f7fa;
+--amor-fill-color-lighter: #fafafa;
+--amor-fill-color-extra-light: #fafcff;
+--amor-fill-color-dark: #ebedf0;
+--amor-fill-color-darker: #e6e8eb;
+--amor-fill-color-blank: #ffffff;
+
+--amor-border-width: 1px;
+--amor-border-style: solid;
+--amor-border-color-hover: var(--amor-text-color-disabled);
+--amor-border: var(--amor-border-width) var(--amor-border-style) var(--amor-border-color);
+--amor-border-radius-base: 4px;
+--amor-border-radius-small: 2px;
+--amor-border-radius-round: 20px;
+--amor-border-radius-circle: 100%;
+
+--amor-font-size-extra-large: 20px;
+--amor-font-size-large: 18px;
+--amor-font-size-medium: 16px;
+--amor-font-size-base: 14px;
+--amor-font-size-small: 13px;
+--amor-font-size-extra-small: 12px;
+--amor-font-family: 'Helvetica Neue',
+Helvetica,
+'PingFang SC',
+'Hiragino Sans GB',
+'Microsoft YaHei',
+'\5fae\8f6f\96c5\9ed1',
+Arial,
+sans-serif;
+--amor-font-weight-primary: 500;
+
+--amor-disabled-bg-color: var(--amor-fill-color-light);
+--amor-disabled-text-color: var(--amor-text-color-placeholder);
+--amor-disabled-border-color: var(--amor-border-color-light);
+
+--amor-transition-duration: 0.3s;
+--amor-transition-duration-fast: 0.2s;
+}

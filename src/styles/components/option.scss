@@ -1,0 +1,37 @@
+.amor-option{
+  --amor-option-width: 240px;
+  --amor-option-hover-bg:var(--amor-fill-color);
+}
+.amor-option{
+  list-style: none;
+  width: var(--amor-option-width);
+  display: flex;
+  align-items: center;
+  position: relative;
+  box-sizing: border-box;
+  cursor: pointer;
+  text-align: left;
+  font-size: 14px;
+  padding: 4px 12px;
+  gap: 6px;
+  min-height: 32px;
+  line-height: 24px;
+  &:hover{
+    background-color: var(--amor-option-hover-bg);
+  }
+
+    // 禁用相关
+    &.is-disabled,
+    &.is-disabled:hover,
+    &.is-disabled:focus,
+    &[disabled],
+    &[disabled]:hover,
+    &[disabled]:focus {
+      color: var(--amor-button-disabled-text-color);
+      background-image: none;
+      background-color: var(--amor-button-disabled-bg-color);
+      border-color: var(--amor-button-disabled-border-color);
+      pointer-events: none; //禁用点击事件
+      cursor: not-allowed;
+    }
+}

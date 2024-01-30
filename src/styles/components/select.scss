@@ -1,0 +1,78 @@
+.amor-select {
+    --amor-select-border-color-hover: var(--amor-border-color-hover);
+    --amor-select-disabled-border: var(--amor-disabled-border-color);
+    --amor-select-font-size: var(--amor-font-size-base);
+    --amor-select-close-hover-color: var(--amor-text-color-secondary);
+    --amor-select-input-color: var(--amor-text-color-placeholder);
+    --amor-select-multiple-input-color: var(--amor-text-color-regular);
+    --amor-select-input-focus-border-color: var(--amor-color-primary);
+    --amor-select-input-font-size: 14px;
+    --amor-select-width: 100%;
+  }
+.amor-select{
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  width: var(--amor-select-width);
+}
+.amor-select__wrapper{
+  display: flex;
+  align-items: center;
+  position: relative;
+  box-sizing: border-box;
+  cursor: pointer;
+  text-align: left;
+  font-size: 14px;
+  padding: 4px 12px;
+  gap: 6px;
+  min-height: 32px;
+  line-height: 24px;
+  border-radius: var(--amor-border-radius-base);
+  background-color: var(--amor-fill-color-blank);
+  transition: var(--amor-transition-duration);
+  box-shadow: 0 0 0 1px var(--amor-border-color) inset;
+    .amor-select-span {
+        color: var(--amor-select-input-color);
+      }
+}
+
+.amor-select--large{
+  .amor-select__wrapper {
+    gap: 6px;
+    padding: 8px 16px;
+    min-height: 40px;
+    line-height: 24px;
+    font-size: 14px;
+  }
+}
+.amor-select--small {
+  .amor-select__wrapper {
+    gap: 4px;
+    padding: 2px 8px;
+    min-height: 24px;
+    line-height: 20px;
+    font-size: 12px;
+  }
+}
+
+.amor-select-input{
+  border: none;
+  width: 90%;
+  outline: none;
+  cursor: pointer;
+}
+.amor-select-open--primary{
+    box-shadow: 0 0 0 1px var(--amor-color-primary) inset;
+}
+.amor-select-open--dark {
+  box-shadow: 0 0 0 1px var(--amor-color-dark) inset;
+}
+.amor-select-open--success {
+  box-shadow: 0 0 0 1px var(--amor-color-success) inset;
+}
+.amor-select-open--danger {
+  box-shadow: 0 0 0 1px var(--amor-color-danger) inset;
+}
+.amor-select-open--warning {
+  box-shadow: 0 0 0 1px var(--amor-color-warning) inset;
+}
