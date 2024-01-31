@@ -1,6 +1,6 @@
 {
   "name": "amork-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "description": "This is a mini vue3+vite UI libaray written in Typescritp.",
   "license": "MIT",
