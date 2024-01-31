@@ -60,15 +60,15 @@ now you can use them in pages
   ```
 - Select
   ```html
-  <Amor-select size="large" clearable v-model="selectVal" placeholder="select...">
-      <Amor-option 
+  <amor-select size="large" clearable v-model="selectVal" placeholder="select...">
+      <amor-option 
         v-for = 'item in options'
         :key="item.value"
         :label="item.label"
         :value="item.value"
         :disabled="item.disabled"
-      ></Amor-option>
-    </Amor-select>
+      ></amor-option>
+    </amor-select>
   ```
 - Tooltip (based on popper.js)
   ```html
